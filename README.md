@@ -13,6 +13,10 @@ Una plantilla moderna, responsive y lista para producción pensada para servidor
 
 ## 📋 Descripción
 
+<p align="center">
+  <video src="./public/videos/video-demo.mp4" width="80%" controls></video>
+</p>
+
 Plantilla web completa para servidores de Hytale o Minecraft. Incluye todo lo necesario para presentar tu servidor de forma profesional: página de inicio con hero animado, sección de modalidades de juego, sistema de noticias, wiki/ayuda con contenido en Markdown, integración con tienda (Tebex) y mucho más.
 
 Aunque fue creada originalmente para un servidor de Hytale, su estructura es completamente adaptable a cualquier servidor de Minecraft u otro juego multijugador. Solo necesitas cambiar los textos, imágenes y colores para hacerla tuya.
