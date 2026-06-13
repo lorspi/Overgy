@@ -13,9 +13,7 @@ Una plantilla moderna, responsive y lista para producción pensada para servidor
 
 ## 📋 Descripción
 
-<p align="center">
-  <video src="./public/videos/video-demo.mp4" width="80%" controls></video>
-</p>
+https://github-production-user-asset-6210df.s3.amazonaws.com/3300442/607533590-19793c00-3b8e-4441-82ad-1ed73714d3df.webm?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260613T201159Z&X-Amz-Expires=300&X-Amz-Signature=e84c559b458e690558ede74987602ad405dc39f0ca902de5fdc9798ddea3abc0&X-Amz-SignedHeaders=host&response-content-type=video%2Fwebm
 
 Plantilla web completa para servidores de Hytale o Minecraft. Incluye todo lo necesario para presentar tu servidor de forma profesional: página de inicio con hero animado, sección de modalidades de juego, sistema de noticias, wiki/ayuda con contenido en Markdown, integración con tienda (Tebex) y mucho más.
 
