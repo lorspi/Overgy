@@ -1,8 +1,9 @@
+<img src="./public/images/logo-full.png" alt="Overgy Logo" width="400"/>
+
 # 🎮 Plantilla Web para Servidores de Hytale / Minecraft
 
 Una plantilla moderna, responsive y lista para producción pensada para servidores de **Hytale** y **Minecraft**. Diseñada para que cualquier comunidad pueda tener una web profesional sin empezar desde cero.
 
-![Demo](https://img.shields.io/badge/demo-overgy.web.app-blue?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite)
@@ -98,7 +99,9 @@ Ofrezco desde ajustes rápidos hasta implementaciones completas con diseño a me
 
 Si esta plantilla te resulta útil, considera invitarme un café:
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-Apóyame-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lorspi)
+<a href="https://ko-fi.com/lorspi" target="_blank">
+  <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-fi" />
+</a>
 
 ---
 
