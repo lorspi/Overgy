@@ -159,9 +159,9 @@ export function TiendaPage() {
 
         {/* Demo mode banner */}
         {IS_DEMO_MODE && (
-          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+          <div className="rounded-lg border border-brand-purple/40 bg-brand-purple/10 px-4 py-3 text-sm text-foreground">
             <strong>Modo demo:</strong> Estás viendo contenido de ejemplo. Configura{" "}
-            <code className="rounded bg-amber-500/20 px-1 py-0.5 font-mono text-xs">
+            <code className="rounded bg-brand-purple/15 px-1 py-0.5 font-mono text-xs">
               VITE_TEBEX_TOKEN
             </code>{" "}
             para cargar los productos reales de tu tienda.
