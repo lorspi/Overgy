@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Overgy design system — vibrant gaming brand, clean cards, chunky buttons.
+ * Brand palette: #8600c9, #6a007a, #46caff, #001a6b.
+ * Fonts: Sen (display), Poppins (body).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-purple-deep: var(--brand-purple-deep);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-navy: var(--brand-navy);
+  --font-display: "Sen", "Poppins", system-ui, sans-serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand */
+  --brand-purple: oklch(0.48 0.28 305);       /* #8600c9 */
+  --brand-purple-deep: oklch(0.36 0.24 320);  /* #6a007a */
+  --brand-cyan: oklch(0.82 0.14 226);          /* #46caff */
+  --brand-navy: oklch(0.25 0.16 270);          /* #001a6b */
+
+  /* Semantic — light, clean canvas with purple ink */
+  --background: oklch(0.99 0.005 300);
+  --foreground: oklch(0.18 0.08 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.08 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.08 280);
+  --primary: var(--brand-purple);
+  --primary-foreground: oklch(0.99 0.005 300);
+  --secondary: oklch(0.96 0.02 295);
+  --secondary-foreground: var(--brand-purple-deep);
+  --muted: oklch(0.96 0.015 295);
+  --muted-foreground: oklch(0.45 0.06 285);
+  --accent: var(--brand-cyan);
+  --accent-foreground: var(--brand-navy);
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.99 0.005 300);
+  --border: oklch(0.22 0.12 280);              /* dark border for chunky look */
+  --input: oklch(0.9 0.02 290);
+  --ring: var(--brand-purple);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.99 0.005 300);
+  --sidebar-foreground: oklch(0.18 0.08 280);
+  --sidebar-primary: var(--brand-purple);
+  --sidebar-primary-foreground: oklch(0.99 0.005 300);
+  --sidebar-accent: oklch(0.96 0.02 295);
+  --sidebar-accent-foreground: var(--brand-purple-deep);
+  --sidebar-border: oklch(0.9 0.02 290);
+  --sidebar-ring: var(--brand-purple);
+}
+
+.dark {
+  --background: oklch(0.13 0.06 280);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.2 0.08 280);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: var(--brand-cyan);
+  --primary-foreground: var(--brand-navy);
+  --secondary: oklch(0.25 0.1 285);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.25 0.1 285);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: var(--brand-purple);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ===== Reusable utilities ===== */
+@layer components {
+  /* Chunky "asteris" style button: thick border, solid offset shadow */
+  .btn-chunky {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-bold uppercase tracking-wide;
+    @apply px-7 py-3 text-base;
+    border: 3px solid var(--brand-navy);
+    box-shadow: 0 6px 0 0 var(--brand-navy);
+    transition: transform 150ms ease, box-shadow 150ms ease, background-color 200ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-chunky::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    transition: none;
+  }
+  .btn-chunky:hover::after {
+    left: 120%;
+    transition: left 600ms ease;
+  }
+  .btn-chunky:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 0 var(--brand-navy);
+  }
+  .btn-chunky:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 0 var(--brand-navy);
+  }
+  .btn-chunky-primary {
+    background: var(--brand-purple);
+    color: white;
+  }
+  .btn-chunky-primary:hover { background: oklch(0.52 0.3 305); }
+  .btn-chunky-cyan {
+    background: var(--brand-cyan);
+    color: var(--brand-navy);
+  }
+  .btn-chunky-white {
+    background: white;
+    color: var(--brand-navy);
+  }
+
+  .btn-chunky-sm {
+    @apply px-4 py-2 text-sm;
+    border-width: 2px;
+    box-shadow: 0 4px 0 0 var(--brand-navy);
+  }
+  .btn-chunky-sm:hover { box-shadow: 0 6px 0 0 var(--brand-navy); }
+
+  /* Card lift on hover */
+  .card-lift {
+    transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px -18px oklch(0.25 0.16 270 / 0.35);
+  }
+
+  /* Fixed parallax section bg */
+  .section-fixed-bg {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(90deg, var(--brand-purple), var(--brand-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.animate-spin-slow-reverse { animation: spin-slow-reverse 12s linear infinite; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translate(-50%, 1rem); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(133, 0, 215, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.0);
+}
