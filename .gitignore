@@ -36,3 +36,4 @@ notas.md
 .firebaserc
 firebase.json
 skills-lock.json
+.env

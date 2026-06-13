@@ -9,6 +9,7 @@ import { ErrorMessage } from "@/components/tienda/ErrorMessage";
 import { ErrorNotification } from "@/components/tienda/ErrorNotification";
 import { SuccessConfirmation } from "@/components/tienda/SuccessConfirmation";
 import { useTebexStore } from "@/hooks/useTebexStore";
+import { IS_DEMO_MODE } from "@/hooks/useTebexStore";
 import { isValidPlayerName } from "@/lib/playerName";
 import { canRetry } from "@/lib/api/tebex";
 import type { TebexPackage } from "@/lib/api/tebex.types";
@@ -155,6 +156,17 @@ export function TiendaPage() {
             error={playerNameError}
           />
         </section>
+
+        {/* Demo mode banner */}
+        {IS_DEMO_MODE && (
+          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            <strong>Modo demo:</strong> Estás viendo contenido de ejemplo. Configura{" "}
+            <code className="rounded bg-amber-500/20 px-1 py-0.5 font-mono text-xs">
+              VITE_TEBEX_TOKEN
+            </code>{" "}
+            para cargar los productos reales de tu tienda.
+          </div>
+        )}
 
         {/* Success Confirmation */}
         {checkoutComplete && (

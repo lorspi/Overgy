@@ -7,6 +7,13 @@ import {
   normalizeError,
   canRetry,
 } from "@/lib/api/tebex";
+import { DEMO_CATEGORIES } from "@/lib/api/tebex.demo";
+
+// Detectar si el token de Tebex está configurado
+const TEBEX_TOKEN = import.meta.env.VITE_TEBEX_TOKEN as string | undefined;
+const IS_DEMO_MODE = !TEBEX_TOKEN || TEBEX_TOKEN.trim() === "";
+
+export { IS_DEMO_MODE };
 
 // === Helper: extraer mensaje de error ===
 
@@ -86,6 +93,17 @@ export function useTebexStore() {
     setIsCategoriesLoading(true);
     setCategoriesError(null);
 
+    // Modo demo: usar datos simulados sin llamar a la API
+    if (IS_DEMO_MODE) {
+      const withPackages = DEMO_CATEGORIES.filter((c) => c.packages.length > 0);
+      setCategories(withPackages);
+      if (withPackages.length > 0) {
+        setActiveCategory(withPackages[0].id);
+      }
+      setIsCategoriesLoading(false);
+      return;
+    }
+
     try {
       const data = await fetchCategories();
 
@@ -136,6 +154,18 @@ export function useTebexStore() {
       setIsBuying(true);
       setBuyingPackageId(pkg.id);
       setBuyError(null);
+
+      // Modo demo: simular compra sin llamar a la API
+      if (IS_DEMO_MODE) {
+        // Simular un breve delay como si se procesara
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        setBuyError(
+          "Modo demo: la compra no se procesó. Configura VITE_TEBEX_TOKEN para habilitar compras reales."
+        );
+        setIsBuying(false);
+        setBuyingPackageId(null);
+        return;
+      }
 
       try {
         // Paso 1: Crear carrito
